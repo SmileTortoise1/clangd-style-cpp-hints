@@ -1,9 +1,9 @@
 {
   "name": "clangd-style-cpp-hints",
-  "displayName": "%extension.displayName%",
+  "displayName": "Clangd-Style C/C++ Inlay Hints",
   "description": "%extension.description%",
   "version": "0.1.1",
-  "publisher": "local-cpp-tools",
+  "publisher": "SmileTortoise",
   "engines": { "vscode": "^1.77.0" },
   "categories": ["Programming Languages"],
   "activationEvents": ["onLanguage:c", "onLanguage:cpp"],

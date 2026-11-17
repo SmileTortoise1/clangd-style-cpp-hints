@@ -1,5 +1,4 @@
 {
-  "extension.displayName": "Clangd-Style C/C++ Inlay Hints",
   "extension.description": "Clangd-style inlay hints for C and C++ with clangd or Microsoft C/C++. Adds enum values at declarations and references to clangd's existing hints.",
   "color.foreground": "此扩展行内提示的文字颜色。",
   "color.background": "此扩展行内提示的背景颜色。",

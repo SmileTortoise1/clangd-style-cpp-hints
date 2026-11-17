@@ -1,5 +1,4 @@
 {
-  "extension.displayName": "Clangd 风格 C/C++ 内联提示",
   "extension.description": "配合 clangd 或微软 C/C++，以 clangd 风格显示 C 和 C++ 的参数、类型、初始化字段和数组下标，并为 clangd 补充枚举声明及引用处的数值提示。",
   "color.foreground": "此扩展行内提示的文字颜色。",
   "color.background": "此扩展行内提示的背景颜色。",
