@@ -1,0 +1,8 @@
+{
+  "folders": [
+    { "name": "Clangd-Style C/C++ Inlay Hints", "path": "." }
+  ],
+  "extensions": {
+    "recommendations": ["ms-vscode.cpptools"]
+  }
+}

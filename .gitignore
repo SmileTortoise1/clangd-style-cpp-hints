@@ -1,0 +1,7 @@
+dist/
+node_modules/
+*.vsix
+*.log
+native/win32-*/
+native/linux-*/
+native/darwin-*/

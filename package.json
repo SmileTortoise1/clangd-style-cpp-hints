@@ -1,0 +1,105 @@
+{
+  "name": "clangd-style-cpp-hints",
+  "displayName": "%extension.displayName%",
+  "description": "%extension.description%",
+  "version": "0.1.1",
+  "publisher": "local-cpp-tools",
+  "engines": { "vscode": "^1.77.0" },
+  "categories": ["Programming Languages"],
+  "activationEvents": ["onLanguage:c", "onLanguage:cpp"],
+  "main": "./extension.js",
+  "scripts": {
+    "test": "node tests/ac5-parameter.test.js && node tests/provider.test.js && node tests/scroll.test.js && node tests/smbus-enum.test.js && node tests/backend.test.js",
+    "package": "powershell -NoProfile -File scripts/package.ps1"
+  },
+  "contributes": {
+    "colors": [
+      {
+        "id": "clangdStyleCppHints.foreground",
+        "description": "%color.foreground%",
+        "defaults": {
+          "dark": "#A1A9B5", "light": "#5C6572", "highContrast": "#CED7E4", "highContrastLight": "#3A4453"
+        }
+      },
+      {
+        "id": "clangdStyleCppHints.background",
+        "description": "%color.background%",
+        "defaults": {
+          "dark": "#CCD9F014", "light": "#26354F0D", "highContrast": "#FFFFFF17", "highContrastLight": "#00000014"
+        }
+      }
+    ],
+    "commands": [
+      { "command": "clangdStyleCppHints.refresh", "title": "%command.refresh%" }
+    ],
+    "configuration": {
+      "title": "%configuration.title%",
+      "properties": {
+        "clangdStyleCppHints.enabled": {
+          "type": "boolean", "default": true, "scope": "resource",
+          "description": "%configuration.enabled%"
+        },
+        "clangdStyleCppHints.parameterHintStyle": {
+          "type": "string", "default": "name", "scope": "resource",
+          "enum": ["name", "nameAndType", "disabled"],
+          "enumItemLabels": ["%parameterStyle.name.label%", "%parameterStyle.nameAndType.label%", "%parameterStyle.disabled.label%"],
+          "markdownEnumDescriptions": ["%parameterStyle.name.description%", "%parameterStyle.nameAndType.description%", "%parameterStyle.disabled.description%"],
+          "markdownDescription": "%configuration.parameterHintStyle%",
+          "keywords": ["参数", "入参", "参数提示样式"]
+        },
+        "clangdStyleCppHints.useClangd": {
+          "type": "boolean", "default": true, "scope": "resource",
+          "tags": ["advanced"],
+          "description": "%configuration.useClangd%"
+        },
+        "clangdStyleCppHints.clangdPath": {
+          "type": "string", "default": "", "scope": "machine-overridable",
+          "tags": ["advanced"],
+          "markdownDescription": "%configuration.clangdPath%"
+        },
+        "clangdStyleCppHints.clangdConfiguration": {
+          "type": "string", "default": "", "scope": "resource",
+          "tags": ["advanced"],
+          "markdownDescription": "%configuration.clangdConfiguration%"
+        },
+        "clangdStyleCppHints.clangdFallbackFlags": {
+          "type": "array", "items": { "type": "string" }, "default": [], "scope": "resource",
+          "tags": ["advanced"],
+          "markdownDescription": "%configuration.clangdFallbackFlags%"
+        },
+        "clangdStyleCppHints.deducedTypes": {
+          "type": "boolean", "default": true, "scope": "resource",
+          "description": "%configuration.deducedTypes%"
+        },
+        "clangdStyleCppHints.enumValues": {
+          "type": "boolean", "default": true, "scope": "resource",
+          "description": "%configuration.enumValues%"
+        },
+        "clangdStyleCppHints.enumValuePlacement": {
+          "type": "string", "default": "prefix", "scope": "resource",
+          "enum": ["prefix", "inlineComment", "implicitAssignment"],
+          "enumItemLabels": ["%enumPlacement.prefix.label%", "%enumPlacement.inlineComment.label%", "%enumPlacement.implicitAssignment.label%"],
+          "markdownEnumDescriptions": ["%enumPlacement.prefix.description%", "%enumPlacement.inlineComment.description%", "%enumPlacement.implicitAssignment.description%"],
+          "markdownDescription": "%configuration.enumValuePlacement%",
+          "keywords": ["枚举", "枚举值", "补零", "注释"]
+        },
+        "clangdStyleCppHints.enumValuesHexadecimal": {
+          "type": "boolean", "default": false, "scope": "resource",
+          "markdownDescription": "%configuration.enumValuesHexadecimal%"
+        },
+        "clangdStyleCppHints.enumValueReferences": {
+          "type": "boolean", "default": false, "scope": "resource",
+          "markdownDescription": "%configuration.enumValueReferences%"
+        },
+        "clangdStyleCppHints.arrayIndices": {
+          "type": "boolean", "default": true, "scope": "resource",
+          "markdownDescription": "%configuration.arrayIndices%"
+        },
+        "clangdStyleCppHints.structFields": {
+          "type": "boolean", "default": true, "scope": "resource",
+          "markdownDescription": "%configuration.structFields%"
+        }
+      }
+    }
+  }
+}
